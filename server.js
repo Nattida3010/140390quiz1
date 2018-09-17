@@ -18,6 +18,13 @@ app.get('/home', function (req, res){
       });
 });
 
+app.get('/students', function (req, res){
+    connection.query('SELECT * FROM students', function (error, results, fields) {
+        console.log('DATA'+results);
+        res.render('pages/students',{students : results})
+      });
+});
+
 console.log('App is running at http://localhost:8081');
 
 app.listen(8081);
