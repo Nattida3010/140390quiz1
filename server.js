@@ -11,17 +11,25 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
-app.get('/home', function (req, res){
-    connection.query('SELECT * FROM students', function (error, results, fields) {
-        console.log('DATA'+results);
-        res.render('pages/home',{home : results})
-      });
+app.get('/', function (req, res) {
+    res.render('pages/home');
 });
+app.get('/index', function (req, res) {
+    res.render('pages/home');
+});
+
 
 app.get('/students', function (req, res){
     connection.query('SELECT * FROM students', function (error, results, fields) {
         console.log('DATA'+results);
         res.render('pages/students',{students : results})
+      });
+});
+
+app.get('/subjects', function (req, res){
+    connection.query('SELECT * FROM subjects', function (error, results, fields) {
+        console.log('DATA'+results);
+        res.render('pages/subjects',{subjects : results})
       });
 });
 

@@ -2,20 +2,20 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>TITLE</th>
-            <th>FIRSTNAME</th>
-            <th>LASTNAME</th>
+            <th>code</th>
+            <th>title</th>
+            <th>credits</th>
+            <th>sections</th>
            
         </tr>
     </thead>
     <tbody>
     <% subjects.forEach(function(result) {%>
         <tr>
-            <td scope="row"><%= result.sid %></td>
+            <td scope="row"><%= result.code %></td>
             <td><%= result.title %></td>
-            <td><%= result.firstname %></td>
-            <td><%= result.lastname %></td>
+            <td><%= result.credits %></td>
+            <td><%= result.sections %></td>
         </tr>
     <%}); %>
     </tbody>
